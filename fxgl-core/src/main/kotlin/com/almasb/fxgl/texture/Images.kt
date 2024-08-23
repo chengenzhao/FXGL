@@ -680,3 +680,24 @@ fun interpolateIntermediateImages(images: List<Image>, numFramesBetweenImages: I
 
     return result
 }
+
+/**
+ * The returned value of 0 means images do not share a single pixel (x, y, color are checked).
+ * The value of 1 means images are identical.
+ * If images have different sizes, 0 is returned.
+ *
+ * @return an accuracy value [0..1] (a ratio)
+ * representing the number of matched pixels over the number of total pixels
+ */
+fun Image.compareStrict(other: Image): Double {
+    if (this.width != other.width || this.height != other.height)
+        return 0.0
+
+    val pixels0 = toPixels(this)
+    val pixels1 = toPixels(other)
+
+    val matched = pixels0.zip(pixels1)
+        .count { (p0, p1) -> p0.color == p1.color }
+
+    return matched.toDouble() / pixels0.size
+}
