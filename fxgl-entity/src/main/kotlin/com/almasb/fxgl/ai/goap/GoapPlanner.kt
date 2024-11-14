@@ -17,7 +17,7 @@ import java.util.*
  *
  * @author Almas Baimagambetov (almaslvl@gmail.com)
  */
-internal object GoapPlanner {
+object GoapPlanner {
 
     /**
      * Plan what sequence of actions can fulfill the goal.

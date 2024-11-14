@@ -12,6 +12,7 @@ module com.almasb.fxgl.entity {
     requires java.xml;
 
     exports com.almasb.fxgl.ai.senseai;
+    exports com.almasb.fxgl.ai.goap;
     exports com.almasb.fxgl.entity;
     exports com.almasb.fxgl.entity.action;
     exports com.almasb.fxgl.entity.component;
