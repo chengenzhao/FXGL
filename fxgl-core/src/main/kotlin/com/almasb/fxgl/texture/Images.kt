@@ -635,6 +635,18 @@ fun toBufferedImage(fxImage: Image): java.awt.image.BufferedImage {
     return awtImage
 }
 
+fun fromBufferedImage(awtImage: java.awt.image.BufferedImage): Image {
+    val w = awtImage.width
+    val h = awtImage.height
+
+    val buffer = awtImage.raster.dataBuffer as java.awt.image.DataBufferInt
+
+    val fxImage = WritableImage(w, h)
+    fxImage.pixelWriter.setPixels(0, 0, w, h, WritablePixelFormat.getIntArgbPreInstance(), buffer.data, 0, w)
+
+    return fxImage
+}
+
 /**
  * Writes [image] to the [filePath].
  */
