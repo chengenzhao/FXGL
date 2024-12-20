@@ -69,7 +69,7 @@ public final class AStarPathfinder<T extends AStarCell> implements Pathfinder<T>
 
     @Override
     public List<T> findPath(int sourceX, int sourceY, int targetX, int targetY, List<T> busyCells) {
-        return findPath(grid.getData(), grid.get(sourceX, sourceY), grid.get(targetX, targetY), NeighborDirection.FOUR_DIRECTIONS, busyCells.toArray(new AStarCell[0]));
+        return findPath(grid.getData(), grid.get(sourceX, sourceY), grid.get(targetX, targetY), FOUR_DIRECTIONS, busyCells.toArray(new AStarCell[0]));
     }
 
     @Override
@@ -88,7 +88,7 @@ public final class AStarPathfinder<T extends AStarCell> implements Pathfinder<T>
      * @return          path as list of nodes from start (excl) to target (incl) or empty list if no path found
      */
     public List<T> findPath(T[][] grid, T start, T target, T... busyNodes) {
-        return findPath(grid, start, target, NeighborDirection.FOUR_DIRECTIONS, busyNodes);
+        return findPath(grid, start, target, FOUR_DIRECTIONS, busyNodes);
     }
 
     /**
