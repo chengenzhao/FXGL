@@ -1,7 +1,6 @@
 #include <SDL.h>
 #include <GL/glew.h>
 
-#include <map>
 #include <iostream>
 #include <string>
 
@@ -10,19 +9,17 @@
 SDL_Window* window;
 SDL_GLContext glContext;
 
-std::map<int, GLuint> shaders;
-
-GLint varTime;
-float t = 0.0f;
-
 EXTERN_DLL_EXPORT void initShaderLib() {
     std::cout << "initShaderLib()" << std::endl;
 
     SDL_Init(SDL_INIT_VIDEO);
 
+    // the resolution below determines the max width*height of GLImageView
+    // since for now we only render within the resolution of the context
+    // is rendering outside the context possible?
     window = SDL_CreateWindow("",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        800, 600,
+        1920, 1080,
         SDL_WINDOW_OPENGL | SDL_WINDOW_HIDDEN);
 
     glContext = SDL_GL_CreateContext(window);
@@ -34,16 +31,28 @@ EXTERN_DLL_EXPORT void initShaderLib() {
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 }
 
+EXTERN_DLL_EXPORT GLint getUniformVarLocation(GLuint program, const char* name) {
+    return glGetUniformLocation(program, name);
+}
+
+EXTERN_DLL_EXPORT void setUniformVarValueFloat(int uniformVarLocation, float value) {
+    glUniform1f(uniformVarLocation, value);
+}
+
+EXTERN_DLL_EXPORT void setUniformVarValueFloat2(int uniformVarLocation, float valueX, float valueY) {
+    glUniform2f(uniformVarLocation, valueX, valueY);
+}
+
 GLuint createShader(const char* shaderCode, GLenum shaderType) {
     GLuint shader = glCreateShader(shaderType);
 
-    const GLchar* strings[] = { shaderCode };	
+    const GLchar* strings[] = { shaderCode };
     GLint lengths[] = { (GLint)strlen(shaderCode) };
 
     glShaderSource(shader, 1, strings, lengths);
     glCompileShader(shader);
 
-    // GL_TRUE or GL_FALSE
+    // TODO: GL_TRUE or GL_FALSE, process accordingly
     GLint success;
     GLint log_length;
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
@@ -53,7 +62,7 @@ GLuint createShader(const char* shaderCode, GLenum shaderType) {
         GLchar* log = new GLchar[log_length];
         glGetShaderInfoLog(shader, log_length, NULL, log);
         std::cout << log << std::endl;
-        
+
         delete[] log;
     }
 
@@ -68,13 +77,9 @@ GLuint createProgram(const char* vertexShaderCode, const char* fragmentShaderCod
     glLinkProgram(program);
     glValidateProgram(program);
 
-    // TODO: get pointers to vars in shaders and upcall
-    varTime = glGetUniformLocation(program, "iTime");
-
     return program;
 }
 
-// TODO: allow controlling these from Java layer
 void glLibDraw(float x, float y, int textureW, int textureH) {
     GLfloat textureVertexData[] = {
         x, y, 0, 0,
@@ -89,7 +94,7 @@ void glLibDraw(float x, float y, int textureW, int textureH) {
 
     // Position x,y start at 0, repeat every 4 values
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), 0);	
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), 0);
 
     // UV u,v start at 2, repeat every 4 values
     glEnableVertexAttribArray(1);
@@ -97,34 +102,33 @@ void glLibDraw(float x, float y, int textureW, int textureH) {
 
     glDrawArrays(GL_TRIANGLES, 0, 6);
 
+    //delete[] textureVertexData;
+
     // TODO: when to clean up
     //glBindBuffer(GL_ARRAY_BUFFER, 0);
     //glDisableVertexAttribArray(0);
     //glDisableVertexAttribArray(1);
     //glDeleteBuffers(1, &vbo);
+    //gl delete shaders
 }
 
-EXTERN_DLL_EXPORT void renderFrame(int id, int* data) {
-    GLuint program = shaders[id];
+EXTERN_DLL_EXPORT void updateFrame(GLuint program) {
     glUseProgram(program);
-
-    // update
-    // TODO: remove once Java <-> native communication is set up
-    t += 0.017f;
-    glUniform1f(varTime, t);
-
-    // render into data
-    // TODO: make resolution dynamic
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glLibDraw(0, 0, 800, 600);
-    glReadPixels(0, 0, 800, 600, GL_BGRA, GL_UNSIGNED_BYTE, data);
 }
 
-EXTERN_DLL_EXPORT void compileShaders(int id, const char* vertexShader, const char* fragShader, int* data) {
+EXTERN_DLL_EXPORT void renderFrame(int width, int height, int* data) {
+    // render into data
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLibDraw(0, 0, width, height);
+    glReadPixels(0, 0, width, height, GL_BGRA, GL_UNSIGNED_BYTE, data);
+}
+
+EXTERN_DLL_EXPORT GLuint compileShaders(const char* vertexShader, const char* fragShader) {
     std::cout << "compileShaders()" << std::endl;
 
     GLuint program = createProgram(vertexShader, fragShader);
-    shaders[id] = program;
+
+    return program;
 }
 
 EXTERN_DLL_EXPORT void exitShaderLib() {
@@ -135,11 +139,11 @@ EXTERN_DLL_EXPORT void exitShaderLib() {
     SDL_Quit();
 }
 
-// for dev purposes, not exposed
+// all code below is for dev purposes, not exposed
 void devLoop() {
     SDL_Event event;
 
-    int* data = new int[800 * 600];
+    //int* data = new int[1];
 
     bool is_running = true;
 
@@ -162,7 +166,7 @@ void devLoop() {
             }
         }
 
-        renderFrame(0, data);
+        //renderFrame(data);
 
         SDL_Delay(17);
     }
