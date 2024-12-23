@@ -208,6 +208,10 @@ public final class ForeignFunctionCaller {
             return callImpl(name, fd, args);
         }
 
+        public void callVoidNoArg(String name) {
+            callImpl(name, FunctionDescriptor.ofVoid());
+        }
+
         public MemorySegment allocateIntArray(int length) {
             return arena.allocate(ValueLayout.JAVA_INT, length);
         }
