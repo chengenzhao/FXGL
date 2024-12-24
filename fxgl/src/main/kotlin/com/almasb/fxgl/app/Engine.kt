@@ -25,7 +25,7 @@ internal class Engine(val settings: ReadOnlyGameSettings) {
 
     private val log = Logger.get(javaClass)
 
-    private val loop = LoopRunner(settings.ticksPerSecond) { loop(it) }
+    private val loop = LoopRunner(settings.ticksPerSecond, settings.fpsRefreshRate) { loop(it) }
 
     val tpf: Double
         get() = loop.tpf
@@ -138,6 +138,10 @@ internal class Engine(val settings: ReadOnlyGameSettings) {
         services.forEach { it.onGameUpdate(tpf) }
     }
 
+    fun onVarsInitialized(vars: PropertyMap) {
+        services.forEach { it.onVarsInitialized(vars) }
+    }
+
     fun onGameReady(vars: PropertyMap) {
         services.forEach { it.onGameReady(vars) }
     }
@@ -172,6 +176,10 @@ internal class Engine(val settings: ReadOnlyGameSettings) {
         loop.resume()
 
         services.forEach { it.onMainLoopResumed() }
+    }
+
+    fun resetServices() {
+        services.forEach { it.onGameReset() }
     }
 
     fun write(bundle: Bundle) {

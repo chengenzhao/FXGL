@@ -79,7 +79,7 @@ public class BasicGameApp extends GameApplication {
 <dependency>
     <groupId>com.github.almasb</groupId>
     <artifactId>fxgl</artifactId>
-    <version>21</version>
+    <version>21.1</version>
 </dependency>
 ```
 
@@ -95,7 +95,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.almasb:fxgl:21'
+    compile 'com.github.almasb:fxgl:21.1'
 }
 ```
 
@@ -126,7 +126,7 @@ open module app.name {
 * Школа инженерии / информатики FHNW, Швейцария
 * Гимназия Иоганна-Андреаса-Шмеллера, Наббург, Германия
 
-Если ваше учебное заведение хочет использовать FXGL или уже использует его, оставьте заметку в [чате](https://gitter.im/AlmasB/FXGL), чтобы мы могли внести его в список.
+Если ваше учебное заведение хочет использовать FXGL или уже использует его, оставьте заметку в [чате](https://github.com/AlmasB/FXGL/discussions), чтобы мы могли внести его в список.
 
 Руководства сообщества:
 
@@ -140,7 +140,7 @@ open module app.name {
 - [Consume](https://ergoscrit.itch.io/consume)
 - [FXGL Sliding Puzzle](https://github.com/beryx/fxgl-sliding-puzzle)
 
-Если вы хотите, чтобы ваш проект был представлен здесь, просто добавьте заметку в [чате](https://gitter.im/AlmasB/FXGL).
+Если вы хотите, чтобы ваш проект был представлен здесь, просто добавьте заметку в [чате](https://github.com/AlmasB/FXGL/discussions).
 
 ### Команда разработчиков
 

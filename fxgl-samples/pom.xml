@@ -5,7 +5,7 @@
     <parent>
         <artifactId>fxgl-framework</artifactId>
         <groupId>com.github.almasb</groupId>
-        <version>21+dev-SNAPSHOT</version>
+        <version>25+dev-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -25,6 +25,12 @@
         <dependency>
             <groupId>com.github.almasb</groupId>
             <artifactId>fxgl-controllerinput</artifactId>
+            <version>${fxgl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.almasb</groupId>
+            <artifactId>fxgl-intelligence</artifactId>
             <version>${fxgl.version}</version>
         </dependency>
     </dependencies>

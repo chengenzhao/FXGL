@@ -338,6 +338,8 @@ class FXGLApplication : Application() {
                 FXGL.getWorldProperties().setValue(name, value)
             }
 
+            engine.onVarsInitialized(FXGL.getWorldProperties())
+
             app.initGame();
         }
 
@@ -636,6 +638,7 @@ class FXGLApplication : Application() {
             log.debug("Clearing previous game")
 
             gameSceneRef.reset()
+            engine.resetServices()
         }
 
         fun saveGame(dataFile: DataFile) {
