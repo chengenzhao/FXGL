@@ -7,7 +7,7 @@
     <parent>
         <artifactId>fxgl-framework</artifactId>
         <groupId>io.github.chengenzhao</groupId>
-        <version>26.4</version>
+        <version>26.5</version>
     </parent>
 
     <artifactId>fxgl</artifactId>
@@ -162,12 +162,6 @@
         <dependency>
             <groupId>io.github.chengenzhao</groupId>
             <artifactId>fxgl-scene</artifactId>
-            <version>${fxgl.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.chengenzhao</groupId>
-            <artifactId>fxgl-gameplay</artifactId>
             <version>${fxgl.version}</version>
         </dependency>
 
