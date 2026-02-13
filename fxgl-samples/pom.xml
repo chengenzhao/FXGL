@@ -12,10 +12,6 @@
     <artifactId>fxgl-samples</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
 
-    <properties>
-        <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>io.github.chengenzhao</groupId>
@@ -55,6 +51,17 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <configuration>
                     <skip>true</skip>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>${central.publishing.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <skipPublishing>true</skipPublishing>
                 </configuration>
             </plugin>
         </plugins>

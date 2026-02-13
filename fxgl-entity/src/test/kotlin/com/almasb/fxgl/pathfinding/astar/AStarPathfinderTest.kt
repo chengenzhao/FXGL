@@ -220,7 +220,7 @@ class AStarPathfinderTest {
         }
     }
 
-    private fun reportNotMatchingPaths(path: List<AStarCell>, points: List<Pair<Int, Int>>): Supplier<String> =
+    private fun reportNotMatchingPaths(path: List<AStarCell>, points: List<Pair<Int, Int>>): Supplier<String?> =
             Supplier { "Paths do not match: \n$path \n!=\n${points}" }
 
     companion object {
