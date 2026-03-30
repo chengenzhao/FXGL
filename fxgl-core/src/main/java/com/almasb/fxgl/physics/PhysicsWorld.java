@@ -351,7 +351,7 @@ public final class PhysicsWorld implements EntityWorldListener, ContactListener,
         if (strategy == CollisionDetectionStrategy.GRID_INDEXING) {
             for (Entity e : entities) {
                 if (isCollidable(e)) {
-                    e.getBoundingBoxComponent().applyTransformToHitBoxes$fxgl_entity();
+                    e.getBoundingBoxComponent().applyTransformToHitBoxes$fxgl_core();
                     collisionGrid.insert(e);
                 }
             }
@@ -365,7 +365,7 @@ public final class PhysicsWorld implements EntityWorldListener, ContactListener,
         } else {
             for (Entity e : entities) {
                 if (isCollidable(e)) {
-                    e.getBoundingBoxComponent().applyTransformToHitBoxes$fxgl_entity();
+                    e.getBoundingBoxComponent().applyTransformToHitBoxes$fxgl_core();
                     collidables.add(e);
                 }
             }
