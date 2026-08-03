@@ -56,9 +56,9 @@ public class TiledMapSample extends GameApplication {
         map.put("h", 1);
         map.put("kjj", 2);
 
-        System.out.println(map);
+        IO.println(map);
 
-        System.out.println(level.getProperties());
+        IO.println(level.getProperties());
 
 //        Level level = getAssetLoader().loadLevel("tmx/map_with_gid_objects.tmx", new TMXLevelLoader());
 //

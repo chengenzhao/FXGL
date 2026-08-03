@@ -31,17 +31,17 @@ public class InputSample extends GameApplication {
         input.addAction(new UserAction("Print Line") {
             @Override
             protected void onActionBegin() {
-                System.out.println("Action Begin");
+                IO.println("Action Begin");
             }
 
             @Override
             protected void onAction() {
-                System.out.println("On Action");
+                IO.println("On Action");
             }
 
             @Override
             protected void onActionEnd() {
-                System.out.println("Action End");
+                IO.println("Action End");
             }
         }, KeyCode.F);
     }

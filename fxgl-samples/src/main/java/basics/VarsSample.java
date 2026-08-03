@@ -54,17 +54,17 @@ public class VarsSample extends GameApplication {
 
     @Override
     protected void initGame() {
-        getWorldProperties().<Vec2>addListener("vector", (prev, now) -> System.out.println(prev + " " + now));
+        getWorldProperties().<Vec2>addListener("vector", (prev, now) -> IO.println(prev + " " + now));
 
-        System.out.println(getd("testDouble"));
+        IO.println(getd("testDouble"));
 
-        System.out.println(getb("testBoolean"));
+        IO.println(getb("testBoolean"));
 
         Vec2 vector = geto("vector");
 
-        System.out.println(vector.x);
+        IO.println(vector.x);
 
-        System.out.println(getWorldProperties().<Vec2>objectProperty("vector").get().y);
+        IO.println(getWorldProperties().<Vec2>objectProperty("vector").get().y);
 
         set("vector", new Vec2(300, 300));
     }

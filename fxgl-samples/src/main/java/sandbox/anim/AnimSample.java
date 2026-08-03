@@ -51,7 +51,7 @@ public class AnimSample extends GameApplication {
             anim.onUpdate(0.5);
 
             getGameWorld().getEntities().forEach(e -> {
-                System.out.println(e.getPosition());
+                IO.println(e.getPosition());
             });
         });
         onKeyDown(KeyCode.G, "g", () -> anim.stop());
@@ -99,14 +99,14 @@ public class AnimSample extends GameApplication {
 //        animationBuilder()
 //                .interpolator(Interpolators.ELASTIC.EASE_OUT())
 //                .duration(Duration.seconds(2))
-//                .onFinished(() -> System.out.println("Done!"))
+//                .onFinished(() -> IO.println("Done!"))
 //                .animate(new AnimatedPoint2D(new Point2D(50, 50), new Point2D(200, 200)))
-//                .onProgress(value -> System.out.println(value))
+//                .onProgress(value -> IO.println(value))
 //                .buildAndPlay();
 
         builder= animationBuilder()
-                .onCycleFinished(() -> System.out.println("Cycle finished"))
-                .onFinished(() -> System.out.println("Anim finished"))
+                .onCycleFinished(() -> IO.println("Cycle finished"))
+                .onFinished(() -> IO.println("Anim finished"))
                 .duration(Duration.seconds(1))
                 .repeat(5)
                 .scale(e)

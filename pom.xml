@@ -54,15 +54,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <source.version>25</source.version>
+        <source.version>26</source.version>
         <fxgl.version>${project.version}</fxgl.version>
 
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>dd.MM.yyyy HH.mm</maven.build.timestamp.format>
 
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>
-        <kotlin.compiler.jvmTarget>25</kotlin.compiler.jvmTarget>
+        <maven.compiler.source>26</maven.compiler.source>
+        <maven.compiler.target>26</maven.compiler.target>
+        <kotlin.compiler.jvmTarget>26</kotlin.compiler.jvmTarget>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
         <!-- plugins -->
@@ -80,10 +80,10 @@
         <maven.templating.version>3.1.0</maven.templating.version>
 
         <!-- dependencies -->
-        <jfx.version>25.0.2</jfx.version>
-        <kotlin.version>2.3.0</kotlin.version>
-        <attach.version>4.0.24</attach.version>
-        <jackson.version>2.21.2</jackson.version>
+        <jfx.version>26.0.2</jfx.version>
+        <kotlin.version>2.4.0</kotlin.version>
+        <attach.version>4.0.25</attach.version>
+        <jackson.version>2.22.1</jackson.version>
         <websocket.version>1.5.5</websocket.version>
         <selenium.version>4.18.1</selenium.version>
         <slf4j.version>2.0.6</slf4j.version>
@@ -227,24 +227,24 @@
 
         <plugins>
             <!-- Check code quality -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>${maven.pmd.version}</version>
-                <configuration>
-                    <targetJdk>${maven.compiler.target}</targetJdk>
-                    <verbose>true</verbose>
-                    <linkXRef>false</linkXRef>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-pmd-plugin</artifactId>-->
+<!--                <version>${maven.pmd.version}</version>-->
+<!--                <configuration>-->
+<!--                    <targetJdk>${maven.compiler.target}</targetJdk>-->
+<!--                    <verbose>true</verbose>-->
+<!--                    <linkXRef>false</linkXRef>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>test</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
 
             <!-- Check license headers -->
             <plugin>

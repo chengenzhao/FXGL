@@ -43,8 +43,8 @@ public class ComplexDialogueSample extends GameApplication {
         });
 
         onKeyDown(KeyCode.F, () -> {
-            System.out.println("Global: " + getWorldProperties());
-            System.out.println("Local: " + entity.getProperties());
+            IO.println("Global: " + getWorldProperties());
+            IO.println("Local: " + entity.getProperties());
         });
     }
 
@@ -89,12 +89,12 @@ public class ComplexDialogueSample extends GameApplication {
     public static class ExampleFunctionHandler extends FunctionCallHandler {
 
         public void customFunction(int number) {
-            System.out.println("Calling custom function with: " + number);
+            IO.println("Calling custom function with: " + number);
         }
 
         @Override
         protected Object handle(String functionName, String[] args) {
-            System.out.println(functionName + " " + Arrays.toString(args));
+            IO.println(functionName + " " + Arrays.toString(args));
 
             return false;
         }
@@ -103,7 +103,7 @@ public class ComplexDialogueSample extends GameApplication {
     public static class ExampleDelegate implements FunctionCallDelegate {
 
         public double anotherFunction(int i, double d, String s) {
-            System.out.println("Calling anotherFunction from delegate: " + i + " " + d + " " + s);
+            IO.println("Calling anotherFunction from delegate: " + i + " " + d + " " + s);
 
             return d;
         }

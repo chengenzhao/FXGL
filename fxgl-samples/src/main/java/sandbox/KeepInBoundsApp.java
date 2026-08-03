@@ -37,22 +37,22 @@ public class KeepInBoundsApp extends GameApplication {
 //        getInput().addTriggerListener(new TriggerListener() {
 //            @Override
 //            protected void onKeyBegin(KeyTrigger keyTrigger) {
-//                System.out.println("BEGIN: " + keyTrigger.getKey());
+//                IO.println("BEGIN: " + keyTrigger.getKey());
 //            }
 //
 //            @Override
 //            protected void onKey(KeyTrigger keyTrigger) {
-//                System.out.println("ACTION: " + keyTrigger.getKey());
+//                IO.println("ACTION: " + keyTrigger.getKey());
 //            }
 //
 //            @Override
 //            protected void onKeyEnd(KeyTrigger keyTrigger) {
-//                System.out.println("END: " + keyTrigger.getKey());
+//                IO.println("END: " + keyTrigger.getKey());
 //            }
 //
 //            @Override
 //            protected void onButtonBegin(MouseTrigger mouseTrigger) {
-//                System.out.println("BEGIN BTN " + mouseTrigger.getButton());
+//                IO.println("BEGIN BTN " + mouseTrigger.getButton());
 //            }
 //        });
 
@@ -86,8 +86,8 @@ public class KeepInBoundsApp extends GameApplication {
         ));
 
         waypointComp.atDestinationProperty().addListener((observable, oldValue, newValue) -> {
-            System.out.println("Was: " + oldValue);
-            System.out.println("Is:  " + newValue);
+            IO.println("Was: " + oldValue);
+            IO.println("Is:  " + newValue);
         });
 
         onKeyDown(KeyCode.O, () -> {

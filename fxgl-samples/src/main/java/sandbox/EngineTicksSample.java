@@ -40,8 +40,8 @@ public class EngineTicksSample extends GameApplication {
     protected void initGame() {
         executor = Executors.newSingleThreadScheduledExecutor();
         executor.scheduleAtFixedRate(() -> {
-            System.out.println("Num ticks: " + ticks);
-            System.out.println("tpf: " + FXGL.tpf());
+            IO.println("Num ticks: " + ticks);
+            IO.println("tpf: " + FXGL.tpf());
             ticks = 0;
         }, 0, 1, TimeUnit.SECONDS);
     }

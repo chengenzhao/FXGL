@@ -82,7 +82,7 @@ public class ReusableEntitySample extends GameApplication {
     public static class ReusableFactory implements EntityFactory {
         @Spawns("e")
         public Entity spawnE(SpawnData data) {
-            System.out.println("Calling factory");
+            IO.println("Calling factory");
 
             var e = entityBuilder(data)
                     .view(new Rectangle(20, 20, Color.BLUE))

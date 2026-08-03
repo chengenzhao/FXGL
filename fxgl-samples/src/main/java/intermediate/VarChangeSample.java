@@ -35,32 +35,32 @@ public class VarChangeSample extends GameApplication {
     protected void initGame() {
         // the DSL way, if you need something set up quickly
         onDoubleChange("time", value -> {
-            System.out.println("The var <time> is now: " + value);
+            IO.println("The var <time> is now: " + value);
         });
 
         onStringChange("name", value -> {
-            System.out.println("The var <name> is now: " + value);
+            IO.println("The var <name> is now: " + value);
         });
 
         onStringChangeTo("name", "HelloHH", () -> {
-            System.out.println("The var <name> reached HelloHH");
+            IO.println("The var <name> reached HelloHH");
         });
 
         onIntChangeTo("hp", 5, () -> {
-            System.out.println("The var <hp> reached 5");
+            IO.println("The var <hp> reached 5");
         });
 
         // the event builder way, if you need more control over execution
         eventBuilder()
                 .when(() -> geti("hp") == 7)
                 .limit(4)
-                .thenRun(() -> System.out.println("The <hp> var reached 7. You will see this message 4 times"))
+                .thenRun(() -> IO.println("The <hp> var reached 7. You will see this message 4 times"))
                 .buildAndStart();
 
         // the listener way, if you want to control lifecycle / clean-up process
         getip("hp").subscribe((oldValue, newValue) -> {
             if (newValue.intValue() == 4) {
-                System.out.println("The var <hp> reached 4");
+                IO.println("The var <hp> reached 4");
             }
         });
 

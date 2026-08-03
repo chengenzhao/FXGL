@@ -42,18 +42,18 @@ public class DialogsSample extends GameApplication {
 
         dialogs.put("Error", () -> getDialogService().showErrorBox("This is a scary error box!", () -> {}));
 
-        dialogs.put("Choice with 1", () -> getDialogService().showChoiceBox("Choose wisely!", answer -> System.out.println("Chosen: " + answer), "Hello"));
-        dialogs.put("Choice with 2", () -> getDialogService().showChoiceBox("Choose wisely!", answer -> System.out.println("Chosen: " + answer), "Hello", "World"));
-        dialogs.put("Choice with 3", () -> getDialogService().showChoiceBox("Choose wisely!", answer -> System.out.println("Chosen: " + answer), "Hello", "World", "FXGL"));
-        dialogs.put("Choice with 4", () -> getDialogService().showChoiceBox("Choose wisely!", answer -> System.out.println("Chosen: " + answer), "Hello", "World", "FXGL", "JavaFX"));
+        dialogs.put("Choice with 1", () -> getDialogService().showChoiceBox("Choose wisely!", answer -> IO.println("Chosen: " + answer), "Hello"));
+        dialogs.put("Choice with 2", () -> getDialogService().showChoiceBox("Choose wisely!", answer -> IO.println("Chosen: " + answer), "Hello", "World"));
+        dialogs.put("Choice with 3", () -> getDialogService().showChoiceBox("Choose wisely!", answer -> IO.println("Chosen: " + answer), "Hello", "World", "FXGL"));
+        dialogs.put("Choice with 4", () -> getDialogService().showChoiceBox("Choose wisely!", answer -> IO.println("Chosen: " + answer), "Hello", "World", "FXGL", "JavaFX"));
 
-        dialogs.put("Choice with List", () -> getDialogService().showChoiceBox("Choose wisely!", List.of("Item1", "Item2"), answer -> System.out.println("Chosen: " + answer)));
+        dialogs.put("Choice with List", () -> getDialogService().showChoiceBox("Choose wisely!", List.of("Item1", "Item2"), answer -> IO.println("Chosen: " + answer)));
 
-        dialogs.put("Choice with Enum", () -> getDialogService().showChoiceBox("Choose wisely!", CustomEnum.class, answer -> System.out.println("Chosen: " + answer)));
+        dialogs.put("Choice with Enum", () -> getDialogService().showChoiceBox("Choose wisely!", CustomEnum.class, answer -> IO.println("Chosen: " + answer)));
 
-        dialogs.put("Confirmation", () -> getDialogService().showConfirmationBox("This is a confirmation box. Agree?", answer -> System.out.println("You pressed yes? " + answer)));
+        dialogs.put("Confirmation", () -> getDialogService().showConfirmationBox("This is a confirmation box. Agree?", answer -> IO.println("You pressed yes? " + answer)));
 
-        dialogs.put("Input", () -> getDialogService().showInputBox("This is an input box. You can type stuff...", answer -> System.out.println("You typed: "+ answer)));
+        dialogs.put("Input", () -> getDialogService().showInputBox("This is an input box. You can type stuff...", answer -> IO.println("You typed: "+ answer)));
 
         dialogs.put("Custom", () -> {
             VBox content = new VBox(
@@ -80,7 +80,7 @@ public class DialogsSample extends GameApplication {
             if (dialogs.containsKey(dialogType)) {
                 dialogs.get(dialogType).run();
             } else {
-                System.out.println("Unknown dialog type");
+                IO.println("Unknown dialog type");
             }
         });
 

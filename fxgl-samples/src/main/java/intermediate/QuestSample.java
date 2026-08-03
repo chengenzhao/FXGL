@@ -44,7 +44,7 @@ public class QuestSample extends GameApplication {
         var objective = quest.addIntObjective("Click 5 times", "clicks", 5);
 
         quest.stateProperty().subscribe((old, newState) -> {
-            System.out.println("Quest state: " + old + " -> " + newState);
+            IO.println("Quest state: " + old + " -> " + newState);
         });
 
         getQuestService().startQuest(quest);

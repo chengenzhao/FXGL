@@ -79,7 +79,7 @@ public class PlatformerSample extends GameApplication {
             }
         }, KeyCode.W, VirtualButton.A);
 
-        onKeyDown(KeyCode.I, "Info", () -> System.out.println(player.getCenter()));
+        onKeyDown(KeyCode.I, "Info", () -> IO.println(player.getCenter()));
 
         input.addAction(new UserAction("Grow") {
             @Override
@@ -119,7 +119,7 @@ public class PlatformerSample extends GameApplication {
 
         player.getTransformComponent().setScaleOrigin(new Point2D(20, 30));
         player.getComponent(PhysicsComponent.class).onGroundProperty().addListener((o, oldValue, newValue) -> {
-            System.out.println(newValue ? "On Ground" : "In the air");
+            IO.println(newValue ? "On Ground" : "In the air");
         });
 
         entityBuilder()
@@ -224,7 +224,7 @@ public class PlatformerSample extends GameApplication {
         if (count >= 500)
             return;
 
-        System.out.println(tpf);
+        IO.println(tpf);
         count++;
     }
 

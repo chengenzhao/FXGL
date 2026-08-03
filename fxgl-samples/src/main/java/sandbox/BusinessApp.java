@@ -94,7 +94,7 @@ public class BusinessApp extends GameApplication {
 
     private void addNew(String username, String password) {
         // code to add new accounts
-        System.out.println("Added: " + username + "," + password);
+        IO.println("Added: " + username + "," + password);
     }
 
     public static void main(String[] args) {

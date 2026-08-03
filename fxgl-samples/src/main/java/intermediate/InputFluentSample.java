@@ -23,9 +23,9 @@ public class InputFluentSample extends GameApplication {
     @Override
     protected void initInput() {
         onKeyBuilder(KeyCode.F)
-                .onActionBegin(() -> System.out.println("Action Begin"))
-                .onAction(() -> System.out.println("On Action"))
-                .onActionEnd(() -> System.out.println("Action End"));
+                .onActionBegin(() -> IO.println("Action Begin"))
+                .onAction(() -> IO.println("On Action"))
+                .onActionEnd(() -> IO.println("Action End"));
     }
 
     public static void main(String[] args) {

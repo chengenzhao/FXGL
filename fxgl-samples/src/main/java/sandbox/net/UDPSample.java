@@ -26,10 +26,10 @@ public class UDPSample {
         var server = new NetService().newUDPServer(55555);
         server.setOnConnected(connection -> {
             connection.addMessageHandler((conn, message) -> {
-                System.out.println("Server got: " + message);
+                IO.println("Server got: " + message);
 
                 if (message.getName().equals("Bye!!!")) {
-                    System.out.println("Stopping now");
+                    IO.println("Stopping now");
                     server.stop();
                 }
             });
@@ -38,7 +38,7 @@ public class UDPSample {
         var client = new NetService().newUDPClient("localhost", 55555);
         client.setOnConnected(connection -> {
             connection.addMessageHandler((conn, message) -> {
-                System.out.println("Client got: " + message);
+                IO.println("Client got: " + message);
 
                 conn.send(new Bundle("Bye!!!"));
 
@@ -53,7 +53,7 @@ public class UDPSample {
                 e.printStackTrace();
             }
 
-            System.out.println("Client connecting");
+            IO.println("Client connecting");
 
             client.connectTask().run();
         }).start();
@@ -65,7 +65,7 @@ public class UDPSample {
                 e.printStackTrace();
             }
 
-            System.out.println("Broadcasting hello");
+            IO.println("Broadcasting hello");
 
             server.broadcast(new Bundle("HELLO!"));
         }).start();
@@ -86,7 +86,7 @@ public class UDPSample {
 //                e.printStackTrace();
 //            }
 //
-//            System.out.println("Client sending hello");
+//            IO.println("Client sending hello");
 //
 //            client.getConnections().forEach(c -> c.send(new Bundle("Client says hello")));
 //        }).start();

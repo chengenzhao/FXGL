@@ -34,7 +34,7 @@ public class SaveGameVarsSample extends GameApplication {
     protected void initInput() {
         // press G to check values
         onKeyDown(KeyCode.G, () -> {
-            System.out.println(getSceneService().getWorldProperties());
+            IO.println(getSceneService().getWorldProperties());
         });
 
         // press F to modify values

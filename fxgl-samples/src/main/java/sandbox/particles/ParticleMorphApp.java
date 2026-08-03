@@ -159,7 +159,7 @@ public class ParticleMorphApp extends GameApplication {
 //            addUINode(p, 450, 150);
 //        });
 
-        System.out.println(pixels.size() + " "  + pixels2.size());
+        IO.println(pixels.size() + " "  + pixels2.size());
     }
 
     private void morph() {

@@ -57,7 +57,7 @@ public class TTSSample extends GameApplication {
 
         getService(TextToSpeechService.class).readyProperty().addListener((o, old, isReady) -> {
             if (isReady) {
-                System.out.println("TTS service is ready");
+                IO.println("TTS service is ready");
 
                 var cb = getUIFactoryService().newChoiceBox(FXCollections.observableArrayList(getService(TextToSpeechService.class).getVoices()));
                 cb.setPrefWidth(400);

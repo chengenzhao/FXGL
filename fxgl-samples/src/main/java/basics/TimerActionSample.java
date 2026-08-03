@@ -43,7 +43,7 @@ public class TimerActionSample extends GameApplication {
 
     @Override
     protected void initGame() {
-        timerAction = FXGL.getGameTimer().runAtInterval(() -> System.out.println("Now: " + FXGL.getGameTimer().getNow()), Duration.seconds(0.5));
+        timerAction = FXGL.getGameTimer().runAtInterval(() -> IO.println("Now: " + FXGL.getGameTimer().getNow()), Duration.seconds(0.5));
     }
 
     public static void main(String[] args) {

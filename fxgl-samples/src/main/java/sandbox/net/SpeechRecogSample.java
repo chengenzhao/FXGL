@@ -33,7 +33,7 @@ public class SpeechRecogSample extends GameApplication {
     @Override
     protected void initGame() {
         getService(SpeechRecognitionService.class).readyProperty().addListener((o, old, isReady) -> {
-            System.out.println("Updated readyProperty: " + isReady);
+            IO.println("Updated readyProperty: " + isReady);
         });
 
         getService(SpeechRecognitionService.class).addInputHandler((input, confidence) -> {

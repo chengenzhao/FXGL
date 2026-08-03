@@ -62,12 +62,12 @@ public class TradeSample extends GameApplication {
             playerShop.setListener(new ShopListener<Entity>() {
                 @Override
                 public void onSold(TradeItem<Entity> item) {
-                    System.out.println("player sold " + item);
+                    IO.println("player sold " + item);
                 }
 
                 @Override
                 public void onBought(TradeItem<Entity> item) {
-                    System.out.println("player bought " + item);
+                    IO.println("player bought " + item);
                 }
             });
 
@@ -101,7 +101,7 @@ public class TradeSample extends GameApplication {
 
                     TradeItem<Entity> item = (TradeItem<Entity>) shopView.getListView().getSelectionModel().getSelectedItem();
 
-                    System.out.println("selected item is : " + item);
+                    IO.println("selected item is : " + item);
 
                     if (item == null)
                         return;

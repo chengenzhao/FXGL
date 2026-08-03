@@ -41,7 +41,7 @@ public class FileDownloadSample extends GameApplication {
                     "testfile.jpg",
                     downloadInfo
             )
-                    .onFailure(ex -> System.out.println("Failed to download: " + ex))
+                    .onFailure(ex -> IO.println("Failed to download: " + ex))
                     .onSuccess(file -> {
                         try {
                             var image = getAssetLoader().loadImage(file.toUri().toURL());
@@ -53,7 +53,7 @@ public class FileDownloadSample extends GameApplication {
                     });
 
             getDialogService().showProgressBox("Downloading file", downloadInfo.progressProperty(), () -> {
-                System.out.println("Done!");
+                IO.println("Done!");
             });
 
             getTaskService().runAsync(task);

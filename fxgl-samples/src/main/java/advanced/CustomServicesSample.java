@@ -35,7 +35,7 @@ public class CustomServicesSample extends GameApplication {
     public static class MyNotificationServiceProvider extends NotificationService {
         @Override
         public void pushNotification(String message) {
-            System.out.println("Notify: " + message);
+            IO.println("Notify: " + message);
         }
 
         @Override

@@ -32,7 +32,7 @@ public class PropertyMapViewSample extends GameApplication {
     protected void initInput() {
         onKeyDown(KeyCode.G, "map", () -> {
             for (String key : map.keys()) {
-                System.out.println(key + " - " + map.getValue(key).toString());
+                IO.println(key + " - " + map.getValue(key).toString());
             }
         });
         onKeyDown(KeyCode.DIGIT1, () -> {

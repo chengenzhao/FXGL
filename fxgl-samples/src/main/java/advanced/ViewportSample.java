@@ -30,15 +30,15 @@ public class ViewportSample extends GameApplication {
         onKeyDown(KeyCode.E, "Lazy", () -> {
             getGameScene().getViewport().setLazy(!getGameScene().getViewport().isLazy());
 
-            System.out.println("isLazy: " + getGameScene().getViewport().isLazy());
+            IO.println("isLazy: " + getGameScene().getViewport().isLazy());
         });
 
         onKeyDown(KeyCode.F, "Flash", () -> {
-            getGameScene().getViewport().flash(() -> System.out.println("Flash finished"));
+            getGameScene().getViewport().flash(() -> IO.println("Flash finished"));
         });
 
         onKeyDown(KeyCode.G, "Fade", () -> {
-            getGameScene().getViewport().fade(() -> System.out.println("Fade finished"));
+            getGameScene().getViewport().fade(() -> IO.println("Fade finished"));
         });
     }
 

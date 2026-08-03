@@ -42,15 +42,15 @@ public class InputCaptureSample extends GameApplication {
         });
 
         onKeyDown(KeyCode.Q, () -> {
-            System.out.println("Q");
+            IO.println("Q");
         });
 
         onKeyDown(KeyCode.W, () -> {
-            System.out.println("W");
+            IO.println("W");
         });
 
         onKeyDown(KeyCode.E, () -> {
-            System.out.println("E");
+            IO.println("E");
         });
     }
 

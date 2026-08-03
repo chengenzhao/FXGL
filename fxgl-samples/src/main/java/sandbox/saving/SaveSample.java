@@ -122,8 +122,8 @@ public class SaveSample extends GameApplication {
                 Bundle bundlePlayer = data.getBundle("Player");
                 Bundle bundleEnemy = data.getBundle("Enemy");
 
-                System.out.println(bundlePlayer);
-                System.out.println(bundleEnemy);
+                IO.println(bundlePlayer);
+                IO.println(bundleEnemy);
             }
         });
     }

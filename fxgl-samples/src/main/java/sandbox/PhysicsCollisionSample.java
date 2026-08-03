@@ -97,7 +97,7 @@ public class PhysicsCollisionSample extends GameApplication {
                 newPlayerScaleY -= amount;
                 break;
             default:
-                System.out.println("UNKNOWN Scale Case Provided");
+                IO.println("UNKNOWN Scale Case Provided");
                 break;
         }
         player.setScaleX(newPlayerScaleX);
@@ -111,7 +111,7 @@ public class PhysicsCollisionSample extends GameApplication {
         input.addAction(new UserAction("Scale Up") {
             @Override
             protected void onActionBegin() {
-                System.out.println("Scaling Up Player.");
+                IO.println("Scaling Up Player.");
             }
 
             @Override
@@ -127,7 +127,7 @@ public class PhysicsCollisionSample extends GameApplication {
         input.addAction(new UserAction("Scale Down") {
             @Override
             protected void onActionBegin() {
-                System.out.println("Scaling Down Player.");
+                IO.println("Scaling Down Player.");
             }
 
             @Override
@@ -143,7 +143,7 @@ public class PhysicsCollisionSample extends GameApplication {
         input.addAction(new UserAction("Rotate Right") {
             @Override
             protected void onActionBegin() {
-                System.out.println("Rotating Player Right.");
+                IO.println("Rotating Player Right.");
             }
 
             @Override
@@ -160,7 +160,7 @@ public class PhysicsCollisionSample extends GameApplication {
         input.addAction(new UserAction("Rotate Left") {
             @Override
             protected void onActionBegin() {
-                System.out.println("Rotating Player Right.");
+                IO.println("Rotating Player Right.");
             }
 
             @Override
@@ -182,22 +182,22 @@ public class PhysicsCollisionSample extends GameApplication {
         physics.addCollisionHandler(new CollisionHandler(Type.PLAYER, Type.ENEMY) {
             @Override
             protected void onHitBoxTrigger(Entity player, Entity enemy, HitBox playerBox, HitBox enemyBox) {
-                System.out.println(playerBox.getName() + " X " + enemyBox.getName());
+                IO.println(playerBox.getName() + " X " + enemyBox.getName());
             }
 
             @Override
             protected void onCollisionBegin(Entity player, Entity enemy) {
-                System.out.println("On Collision Begin");
+                IO.println("On Collision Begin");
             }
 
             @Override
             protected void onCollision(Entity player, Entity enemy) {
-                System.out.println("On Collision");
+                IO.println("On Collision");
             }
 
             @Override
             protected void onCollisionEnd(Entity player, Entity enemy) {
-                System.out.println("On Collision End");
+                IO.println("On Collision End");
             }
         });
     }

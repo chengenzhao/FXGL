@@ -45,7 +45,7 @@ public class AchievementSample extends GameApplication {
     @Override
     protected void initGame() {
         getEventBus().addEventHandler(AchievementEvent.ANY, e -> {
-            System.out.println(e);
+            IO.println(e);
         });
     }
 

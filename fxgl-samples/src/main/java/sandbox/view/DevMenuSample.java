@@ -39,13 +39,13 @@ public class DevMenuSample extends GameApplication {
     protected void initInput() {
         onKeyDown(KeyCode.F, () -> {
 
-            System.out.println(getop("pos").hashCode());
+            IO.println(getop("pos").hashCode());
 
             Vec2 v = geto("pos");
             v.set(FXGLMath.randomPoint(new Rectangle2D(0, 0, getAppWidth(), getAppHeight())));
 
             set("pos", v);
-            System.out.println(geto("pos").toString());
+            IO.println(geto("pos").toString());
         });
     }
 
@@ -62,7 +62,7 @@ public class DevMenuSample extends GameApplication {
         });
 
         getWorldProperties().<Integer>addListener("score", (old, score) -> {
-            System.out.println(score);
+            IO.println(score);
         });
     }
 

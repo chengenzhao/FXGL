@@ -77,13 +77,13 @@ public class TiledBenchmarkSample extends GameApplication {
                 iterations = Integer.parseInt(iterationsInput.getText());
             }
             catch (NumberFormatException e) {
-                System.out.println("Enter a number of iterations");
+                IO.println("Enter a number of iterations");
                 status.setText("Enter a number of iterations");
                 return;
             }
 
             if (currentMapSelection.equals("")) {
-                System.out.println("Choose a map to test");
+                IO.println("Choose a map to test");
                 status.setText("Choose a map to test");
             }
             else {
@@ -133,7 +133,7 @@ public class TiledBenchmarkSample extends GameApplication {
                             "\nIterations: " + iterations +
                             "\nAverage: " + (totalTime/iterations) / 1_000_000_000.0;
             status.setText(results);
-            System.out.println(results);
+            IO.println(results);
         });
     }
 

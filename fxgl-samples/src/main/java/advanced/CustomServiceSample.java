@@ -24,12 +24,12 @@ public class CustomServiceSample extends GameApplication {
     public static class CustomService extends EngineService {
         @Override
         public void onInit() {
-            System.out.println("onInit()");
+            IO.println("onInit()");
         }
 
         @Override
         public void onExit() {
-            System.out.println("onExit()");
+            IO.println("onExit()");
         }
     }
 

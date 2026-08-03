@@ -58,7 +58,7 @@ public class BenchmarkSpawnManyEntitiesSample extends GameApplication {
                 return Unit.INSTANCE;
             });
 
-            System.out.println("Add: " + time / 1000000000.0);
+            IO.println("Add: " + time / 1000000000.0);
 
             runOnce(() -> {
                 var time2 = TimingKt.measureNanoTime(() -> {
@@ -67,7 +67,7 @@ public class BenchmarkSpawnManyEntitiesSample extends GameApplication {
                     return Unit.INSTANCE;
                 });
 
-                System.out.println("Remove: " + time2 / 1000000000.0);
+                IO.println("Remove: " + time2 / 1000000000.0);
             }, Duration.seconds(0.2));
         });
     }

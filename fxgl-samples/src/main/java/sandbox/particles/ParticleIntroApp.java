@@ -116,7 +116,7 @@ public class ParticleIntroApp extends GameApplication {
             addUINode(p, 300, 120);
         });
 
-        System.out.println(pixels.size() + " "  + pixels2.size());
+        IO.println(pixels.size() + " "  + pixels2.size());
     }
 
     private void start() {

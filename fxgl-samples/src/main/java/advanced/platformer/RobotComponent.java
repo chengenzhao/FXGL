@@ -132,7 +132,7 @@ public class RobotComponent extends Component {
         state.changeState(STAND);
 
         state.currentStateProperty().addListener((o, oldState, newState) -> {
-            System.out.println("new state: " + newState);
+            IO.println("new state: " + newState);
 
             var data = stateData.get(newState);
 

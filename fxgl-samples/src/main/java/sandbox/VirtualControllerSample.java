@@ -49,68 +49,68 @@ public class VirtualControllerSample extends GameApplication {
         getInput().addAction(new UserAction("test") {
             @Override
             protected void onActionBegin() {
-                System.out.println("start f");
+                IO.println("start f");
             }
 
             @Override
             protected void onAction() {
-                System.out.println("f");
+                IO.println("f");
             }
 
             @Override
             protected void onActionEnd() {
-                System.out.println("end f");
+                IO.println("end f");
             }
         }, KeyCode.F, VirtualButton.X);
 
         getInput().addAction(new UserAction("test2") {
             @Override
             protected void onActionBegin() {
-                System.out.println("start g");
+                IO.println("start g");
             }
 
             @Override
             protected void onAction() {
-                System.out.println("g");
+                IO.println("g");
             }
 
             @Override
             protected void onActionEnd() {
-                System.out.println("end g");
+                IO.println("end g");
             }
         }, KeyCode.G, VirtualButton.Y);
 
         getInput().addAction(new UserAction("test3") {
             @Override
             protected void onActionBegin() {
-                System.out.println("start h");
+                IO.println("start h");
             }
 
             @Override
             protected void onAction() {
-                System.out.println("h");
+                IO.println("h");
             }
 
             @Override
             protected void onActionEnd() {
-                System.out.println("end h");
+                IO.println("end h");
             }
         }, KeyCode.H, VirtualButton.A);
 
         getInput().addAction(new UserAction("test4") {
             @Override
             protected void onActionBegin() {
-                System.out.println("start j");
+                IO.println("start j");
             }
 
             @Override
             protected void onAction() {
-                System.out.println("j");
+                IO.println("j");
             }
 
             @Override
             protected void onActionEnd() {
-                System.out.println("end j");
+                IO.println("end j");
             }
         }, KeyCode.J, VirtualButton.B);
     }

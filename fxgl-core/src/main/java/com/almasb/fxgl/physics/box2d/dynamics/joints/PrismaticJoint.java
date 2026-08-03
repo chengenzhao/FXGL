@@ -552,7 +552,7 @@ public class PrismaticJoint extends Joint {
         temp.set(vB).subLocal(vA);
         Cdot1.x = Vec2.dot(m_perp, temp) + m_s2 * wB - m_s1 * wA;
         Cdot1.y = wB - wA;
-        // System.out.println(Cdot1);
+        // IO.println(Cdot1);
 
         if (m_enableLimit && m_limitState != LimitState.INACTIVE) {
             // Solve prismatic and limit constraint in block form.

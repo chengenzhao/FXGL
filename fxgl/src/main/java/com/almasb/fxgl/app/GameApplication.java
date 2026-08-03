@@ -104,9 +104,9 @@ public abstract class GameApplication {
     }
 
     private static void printErrorAndExit(Exception e) {
-        System.out.println("Error during launch:");
+        IO.println("Error during launch:");
         e.printStackTrace();
-        System.out.println("Application will now exit");
+        IO.println("Application will now exit");
         System.exit(-1);
     }
 

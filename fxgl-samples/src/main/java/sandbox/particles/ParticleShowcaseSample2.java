@@ -134,7 +134,7 @@ public class ParticleShowcaseSample2 extends GameApplication {
 
             var name = names[index++];
 
-            System.out.println("Using " + name);
+            IO.println("Using " + name);
 
             emitter.setSourceImage(texture("particles/" + name, 32, 32).multiplyColor(c));
 
@@ -171,7 +171,7 @@ public class ParticleShowcaseSample2 extends GameApplication {
 
             var name = names[index++];
 
-            System.out.println("Using " + name);
+            IO.println("Using " + name);
 
 
             if (index == names.length) {
@@ -295,7 +295,7 @@ public class ParticleShowcaseSample2 extends GameApplication {
 
         var name = names[index++];
 
-        System.out.println("Using " + name);
+        IO.println("Using " + name);
 
 
         if (index == names.length) {

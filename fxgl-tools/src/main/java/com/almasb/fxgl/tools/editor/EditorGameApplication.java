@@ -31,7 +31,7 @@ public class EditorGameApplication extends GameApplication {
 //        getInput().addTriggerListener(new TriggerListener() {
 //            @Override
 //            protected void onActionBegin(Trigger trigger) {
-//                System.out.println(trigger);
+//                IO.println(trigger);
 //            }
 //        });
     }
