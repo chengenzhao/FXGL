@@ -80,10 +80,10 @@
         <maven.templating.version>3.1.0</maven.templating.version>
 
         <!-- dependencies -->
-        <jfx.version>26.0.2</jfx.version>
-        <kotlin.version>2.4.0</kotlin.version>
+        <jfx.version>27</jfx.version>
+        <kotlin.version>2.4.20</kotlin.version>
         <attach.version>4.0.25</attach.version>
-        <jackson.version>2.22.1</jackson.version>
+        <jackson.version>2.22.2</jackson.version>
         <websocket.version>1.5.5</websocket.version>
         <selenium.version>4.18.1</selenium.version>
         <slf4j.version>2.0.6</slf4j.version>
