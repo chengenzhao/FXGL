@@ -79,7 +79,7 @@ Otherwise, see:
 <dependency>
     <groupId>io.github.chengenzhao</groupId>
     <artifactId>fxgl</artifactId>
-    <version>26.5</version>
+    <version>27.2</version>
 </dependency>
 ```
 
@@ -95,7 +95,7 @@ repositories {
 }
 
 dependencies {
-    compile 'io.github.chengenzhao:fxgl:26.5'
+    compile 'io.github.chengenzhao:fxgl:27.2'
 }
 ```
 

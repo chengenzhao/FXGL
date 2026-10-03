@@ -4,7 +4,7 @@
 
     <groupId>io.github.chengenzhao</groupId>
     <artifactId>fxgl-framework</artifactId>
-    <version>27.1</version>
+    <version>27.2</version>
     
     <packaging>pom</packaging>
 
@@ -83,7 +83,7 @@
         <jfx.version>27</jfx.version>
         <kotlin.version>2.4.20</kotlin.version>
         <attach.version>4.0.25</attach.version>
-        <jackson.version>2.22.2</jackson.version>
+        <jackson.version>2.22.3</jackson.version>
         <websocket.version>1.6.0</websocket.version>
         <selenium.version>4.49.0</selenium.version>
         <slf4j.version>2.0.19</slf4j.version>
