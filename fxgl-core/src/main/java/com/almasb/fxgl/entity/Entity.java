@@ -51,15 +51,14 @@ public class Entity implements Animatable, Copyable<Entity> {
 
     private static class ComponentMap {
         private Map<Class<? extends Component>, Component> components = new HashMap<>();
-        private List<Component> componentList = new ArrayList<>();
+        private final List<Component> componentList = new ArrayList<>();
 
         void update(double tpf) {
-            for (int i = 0; i < componentList.size(); i++) {
-                Component c = componentList.get(i);
-                if (!c.isPaused()) {
-                    c.onUpdate(tpf);
-                }
+          for (Component c : componentList) {
+            if (!c.isPaused()) {
+              c.onUpdate(tpf);
             }
+          }
         }
 
         <T extends Component> boolean has(Class<T> type) {
@@ -673,15 +672,27 @@ public class Entity implements Animatable, Copyable<Entity> {
     /**
      * Set position top left x of this entity.
      */
-    public final void setX(double x) {
+    public final Entity setX(double x) {
         transform.setX(x);
+        return this;
+    }
+
+    public final Entity setCentralX(double centralX){
+        transform.setX(centralX - getWidth()/2.0);
+        return this;
     }
 
     /**
      * Set position top left y of this entity.
      */
-    public final void setY(double y) {
+    public final Entity setY(double y) {
         transform.setY(y);
+        return this;
+    }
+
+    public final Entity setCentralY(double centralY){
+        transform.setY(centralY - getHeight()/2.0);
+        return this;
     }
 
     public final void setZ(double z) {
