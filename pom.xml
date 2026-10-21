@@ -4,7 +4,7 @@
 
     <groupId>io.github.chengenzhao</groupId>
     <artifactId>fxgl-framework</artifactId>
-    <version>27.3</version>
+    <version>27.4</version>
     
     <packaging>pom</packaging>
 
@@ -60,7 +60,7 @@
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>dd.MM.yyyy HH.mm</maven.build.timestamp.format>
 
-        <maven.compiler.source>28</maven.compiler.source>
+        <maven.compiler.source>26</maven.compiler.source>
         <maven.compiler.target>26</maven.compiler.target>
         <kotlin.compiler.jvmTarget>26</kotlin.compiler.jvmTarget>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
@@ -80,10 +80,10 @@
         <maven.templating.version>3.1.0</maven.templating.version>
 
         <!-- dependencies -->
-        <jfx.version>27</jfx.version>
+        <jfx.version>27.0.1</jfx.version>
         <kotlin.version>2.4.21</kotlin.version>
         <attach.version>4.0.25</attach.version>
-        <jackson.version>2.22.3</jackson.version>
+        <jackson.version>2.22.4</jackson.version>
         <websocket.version>1.6.0</websocket.version>
         <selenium.version>4.51.0</selenium.version>
         <slf4j.version>2.0.20</slf4j.version>
